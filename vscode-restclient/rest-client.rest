@@ -1,11 +1,15 @@
-###
-GET https://httpbin.org/get?isGood=true&isBad=false
+# https://www.youtube.com/watch?v=RcxvrhQKv8I
+
+@hostname=https://httpbin.org
 
 ###
-DELETE https://httpbin.org/delete
+GET {{hostname}}/get?isGood=true&isBad=false
 
 ###
-POST https://httpbin.org/post
+DELETE {{hostname}}/delete
+
+###
+POST {{hostname}}/post
 
 {
     "name": "john deer",
@@ -13,7 +17,7 @@ POST https://httpbin.org/post
 }
 
 ###
-PUT https://httpbin.org/put
+PUT {{hostname}}/put
 Content-Type: application/x-www-form-urlencoded
 
 name=john+deer&permissions=2000&permissions=3000&permissions=4000
