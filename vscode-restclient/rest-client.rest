@@ -29,3 +29,8 @@ Authorization: Basic dTpw
 ###
 GET {{hostname}}/image/svg
 accept: image/svg+xml
+
+###
+GET {{hostname}}/drip?duration=2&numbytes=10&code=200&delay=2
+
+accept: application/octet-stream

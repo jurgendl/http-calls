@@ -1,0 +1,33 @@
+meta {
+  name: DRIP
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{hostname}}/drip?duration=2&numbytes=10&code=200&delay=2
+  body: none
+  auth: none
+}
+
+params:query {
+  duration: 2
+  numbytes: 10
+  code: 200
+  delay: 2
+}
+
+headers {
+  accept: application/octet-stream
+}
+
+tests {
+  test("Status code is 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+}
+
+docs {
+  Simple GET request with URL Parameters
+}
