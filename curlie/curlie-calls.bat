@@ -7,4 +7,5 @@ curlie -v PUT "https://httpbin.org/put" --data "name=john%20deer&permissions=200
 curlie -v GET "https://httpbin.org/hidden-basic-auth/u/p" -H "Authorization: Basic dTpw"
 curlie -v GET "https://httpbin.org/image/svg" -H "accept: image/svg+xml"
 curlie -v GET "https://httpbin.org/drip?duration=2&numbytes=10&code=200&delay=2" -H "accept: application/octet-stream"
+curlie -v GET "https://httpbin.org/bearer" -H "accept: application/json" -H "Authorization: Bearer bearer"
 @pause

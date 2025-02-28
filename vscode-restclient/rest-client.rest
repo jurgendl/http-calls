@@ -40,3 +40,9 @@ GET {{hostname}}/drip
 	&code=200
 	&delay=2
 accept: application/octet-stream
+
+###
+GET {{hostname}}/bearer
+accept: application/json
+Authorization: Bearer bearer
+

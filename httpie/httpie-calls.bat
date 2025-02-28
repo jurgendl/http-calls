@@ -7,4 +7,5 @@ http -v PUT "https://httpbin.org/put" --form "name=john%20deer&permissions=2000&
 http -v GET "https://httpbin.org/hidden-basic-auth/u/p" "Authorization: Basic dTpw"
 http -v GET "https://httpbin.org/image/svg" "accept: image/svg+xml"
 http -v GET "https://httpbin.org/drip?duration=2&numbytes=10&code=200&delay=2" "accept: application/octet-stream"
+http -v GET "https://httpbin.org/bearer" "accept: application/json" "Authorization: Bearer bearer"
 @pause

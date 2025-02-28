@@ -7,4 +7,5 @@ curl -v -X PUT "https://httpbin.org/put" --data "name=john+deer&permissions=2000
 curl -v -X GET "https://httpbin.org/hidden-basic-auth/u/p" -H "Authorization: Basic dTpw"
 curl -v -X GET "https://httpbin.org/image/svg" -H "accept: image/svg+xml"
 curl -v -X GET "https://httpbin.org/drip?duration=2&numbytes=10&code=200&delay=2" -H "accept: application/octet-stream"
+curl -v -X GET "https://httpbin.org/bearer" -H "accept: application/json" -H "Authorization: Bearer bearer"
 @pause

@@ -1,18 +1,17 @@
 meta {
-  name: AUTH
+  name: AUTH BEARER
   type: http
-  seq: 6
+  seq: 9
 }
 
 get {
-  url: {{hostname}}/hidden-basic-auth/u/p
+  url: {{hostname}}/bearer
   body: none
-  auth: basic
+  auth: bearer
 }
 
-auth:basic {
-  username: u
-  password: p
+auth:bearer {
+  token: bearer
 }
 
 tests {
@@ -23,6 +22,7 @@ tests {
   test("TEST", function () {
     expect(res.getBody().authenticated).to.eql(true);
   });
+  
 }
 
 docs {
