@@ -1,0 +1,26 @@
+meta {
+  name: SVG
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{hostname}}/image/svg
+  body: none
+  auth: none
+}
+
+headers {
+  accept: image/svg+xml
+}
+
+tests {
+  test("Status code is 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+}
+
+docs {
+  Simple GET request with URL Parameters
+}
