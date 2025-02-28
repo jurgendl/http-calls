@@ -42,3 +42,11 @@ accept: application/octet-stream
 GET {{hostname}}/bearer
 accept: application/json
 Authorization: Bearer bearer
+
+###
+GET https://httpbin.org/gzip
+
+### WIP? https://github.com/Huachao/vscode-restclient/issues/711
+GET https://github.com/httpie/cli/archive/master.tar.gz
+
+> ./master.tar.gz
