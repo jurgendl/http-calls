@@ -12,8 +12,8 @@ DELETE {{hostname}}/delete
 POST {{hostname}}/post
 
 {
-    "name": "john deer",
-    "permissions": [2000,3000,4000]
+	"name": "john deer",
+	"permissions": [2000,3000,4000]
 }
 
 ###
