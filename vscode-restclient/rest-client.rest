@@ -1,9 +1,12 @@
 # https://www.youtube.com/watch?v=RcxvrhQKv8I
+# https://www.youtube.com/watch?v=Kxp5h8tXdFE
 
 @hostname=https://httpbin.org
 
 ###
-GET {{hostname}}/get?isGood=true&isBad=false
+GET {{hostname}}/get
+	?isGood=true
+	&isBad=false
 
 ###
 DELETE {{hostname}}/delete
@@ -31,6 +34,9 @@ GET {{hostname}}/image/svg
 accept: image/svg+xml
 
 ###
-GET {{hostname}}/drip?duration=2&numbytes=10&code=200&delay=2
-
+GET {{hostname}}/drip
+	?duration=2
+	&numbytes=10
+	&code=200
+	&delay=2
 accept: application/octet-stream
