@@ -1,0 +1,23 @@
+@hostname=http://localhost:5000
+
+###
+POST {{hostname}}/users/
+content-type: application/json
+
+{
+	"first_name": "John",
+	"last_name": "Doe",
+	"email": "johndoe@example.com"
+}
+
+###
+GET {{hostname}}/users/
+content-type: application/json
+
+###
+GET {{hostname}}/users/44951f58-d890-4029-9160-5606be6efaf2
+content-type: application/json
+
+###
+DELETE {{hostname}}/users/44951f58-d890-4029-9160-5606be6efaf2
+content-type: application/json
