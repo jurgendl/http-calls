@@ -1,0 +1,35 @@
+meta {
+  name: GET with URL Params
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://httpbin.org/get?isGood=true&isBad=false
+  body: none
+  auth: none
+}
+
+params:query {
+  isGood: true
+  isBad: false
+}
+
+tests {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  
+  let jsonData = res.getBody();
+  
+  test("Your test name", function () {
+      expect(res.getStatus()).to.equal(200);
+      expect(jsonData.args.isGood).to.eql('true');
+      expect(jsonData.args.isBad).to.eql('false');
+  });
+}
+
+docs {
+  Simple GET request with URL Parameters
+}

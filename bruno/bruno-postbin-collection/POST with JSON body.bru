@@ -1,0 +1,34 @@
+meta {
+  name: POST with JSON body
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://httpbin.org/post
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "name": "john",
+      "permissions": [2000,3000,4000]
+  }
+}
+
+script:pre-request {
+  let date = Date.now();
+  
+  bru.setGlobalEnvVar("currentDate", date);
+}
+
+tests {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+}

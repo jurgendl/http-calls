@@ -1,0 +1,19 @@
+###
+GET https://httpbin.org/get?isGood=true&isBad=false
+
+###
+DELETE https://httpbin.org/delete
+
+###
+POST https://httpbin.org/post
+
+{
+    "name": "john",
+    "permissions": [2000,3000,4000]
+}
+
+###
+PUT https://httpbin.org/put
+Content-Type: application/x-www-form-urlencoded
+
+name=john&permissions=2000&permissions=3000&permissions=4000

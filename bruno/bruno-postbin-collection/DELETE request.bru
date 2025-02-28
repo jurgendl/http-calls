@@ -1,0 +1,17 @@
+meta {
+  name: DELETE request
+  type: http
+  seq: 4
+}
+
+delete {
+  url: https://httpbin.org/delete
+  body: none
+  auth: none
+}
+
+tests {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+}
