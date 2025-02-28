@@ -24,35 +24,41 @@ router.get('/', (req, res) => {
 
 // Adding users to our mock database
 router.post('/', (req, res) => {
-	const user = req.body;
+	let user = req.body;
 	const id = uuidv4();
-	users.push({ ...user, id });
-	res.send(`{"action":"created","id":${id}}`);
+	user = { ...user, id };
+	users.push(user);
+	res.setHeader('Content-Type', 'application/json');
+	res.send(`{"action":"created","user":${JSON.stringify(user)}}`);
 })
 
 // get a particular user
 router.get('/:id', (req, res) => {
 	const { id } = req.params;
-	const foundUser = users.find((user) => user.id === id)
+	const foundUser = users.find((user) => user.id === id);
+	res.setHeader('Content-Type', 'application/json');
 	res.send(foundUser)
 });
 
 // delete the user from the database
 router.delete('/:id', (req, res) => {
 	const { id } = req.params;
-	users = users.filter((user) => user.id !== id)
-	res.send(`{"action":"deleted","id":${id}}`);
+	const foundUser = users.find((user) => user.id !== id);
+	res.setHeader('Content-Type', 'application/json');
+	res.send(`{"action":"deleted","user":${JSON.stringify(foundUser)}}`);
 });
 
 // Make a PATCH request to the database
 router.patch('/:id', (req, res) => {
 	const { id } = req.params;
 	const { first_name, last_name, email } = req.body;
-	const user = users.find((user) => user.id === id)
-	if (first_name) user.first_name = first_name;
-	if (last_name) user.last_name = last_name;
-	if (email) user.email = email;
-	res.send(user);
+	const foundUser = users.find((user) => user.id === id);
+	if(!foundUser) 
+	if (first_name) foundUser.first_name = first_name;
+	if (last_name) foundUser.last_name = last_name;
+	if (email) foundUser.email = email;
+	res.setHeader('Content-Type', 'application/json');
+	res.send(foundUser);
 });
 
 export default router

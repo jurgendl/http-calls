@@ -1,6 +1,7 @@
 @hostname=http://localhost:5000
 
 ###
+# @name createUser
 POST {{hostname}}/users/
 content-type: application/json
 
@@ -15,9 +16,11 @@ GET {{hostname}}/users/
 content-type: application/json
 
 ###
-GET {{hostname}}/users/44951f58-d890-4029-9160-5606be6efaf2
+GET {{hostname}}/users/{{createUser.response.body.$.user.id}}
 content-type: application/json
 
 ###
-DELETE {{hostname}}/users/44951f58-d890-4029-9160-5606be6efaf2
+DELETE {{hostname}}/users/{{createUser.response.body.$.user.id}}
 content-type: application/json
+
+
