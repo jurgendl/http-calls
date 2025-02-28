@@ -17,3 +17,11 @@ body:json {
     "email": "johndoe@example.com"
   }
 }
+
+vars:post-response {
+  userid: res.body.user.id
+}
+
+script:post-response {
+  console.log(res.body.user.id);
+}

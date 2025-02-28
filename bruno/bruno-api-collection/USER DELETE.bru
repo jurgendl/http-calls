@@ -1,0 +1,19 @@
+meta {
+  name: USER DELETE
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{hostname}}/users/{{userid}}
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "johndoe@example.com"
+  }
+}
