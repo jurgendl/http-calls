@@ -15,7 +15,7 @@ headers {
 }
 
 body:form-urlencoded {
-  name: john
+  name: john deer
   permissions: 2000
   permissions: 3000
   permissions: 4000
@@ -23,11 +23,10 @@ body:form-urlencoded {
 
 tests {
   test("Status code is 200", function () {
-      expect(res.getStatus()).to.equal(200);
+    expect(res.getStatus()).to.equal(200);
   });
   
-  test("Test form data", function () {
-      let data = res.getBody();
-      expect(data.form.name).to.eql("john");
+  test("TEST", function () {
+    expect(res.getBody().form.name).to.eql("john deer");
   });
 }

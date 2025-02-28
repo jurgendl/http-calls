@@ -16,7 +16,7 @@ headers {
 
 body:json {
   {
-      "name": "john",
+      "name": "john deer",
       "permissions": [2000,3000,4000]
   }
 }
@@ -29,6 +29,10 @@ script:pre-request {
 
 tests {
   test("Status code is 200", function () {
-      expect(res.getStatus()).to.equal(200);
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("TEST", function () {
+    expect(res.getBody().json.name).to.eql("john deer");
   });
 }

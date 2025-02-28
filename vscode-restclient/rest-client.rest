@@ -8,7 +8,7 @@ DELETE https://httpbin.org/delete
 POST https://httpbin.org/post
 
 {
-    "name": "john",
+    "name": "john deer",
     "permissions": [2000,3000,4000]
 }
 
@@ -16,4 +16,4 @@ POST https://httpbin.org/post
 PUT https://httpbin.org/put
 Content-Type: application/x-www-form-urlencoded
 
-name=john&permissions=2000&permissions=3000&permissions=4000
+name=john+deer&permissions=2000&permissions=3000&permissions=4000

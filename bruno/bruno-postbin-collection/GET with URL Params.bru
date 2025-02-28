@@ -17,16 +17,12 @@ params:query {
 
 tests {
   test("Status code is 200", function () {
-      expect(res.getStatus()).to.equal(200);
+    expect(res.getStatus()).to.equal(200);
   });
   
-  
-  let jsonData = res.getBody();
-  
-  test("Your test name", function () {
-      expect(res.getStatus()).to.equal(200);
-      expect(jsonData.args.isGood).to.eql('true');
-      expect(jsonData.args.isBad).to.eql('false');
+  test("TEST", function () {
+    expect(res.getBody().args.isGood).to.eql('true');
+    expect(res.getBody().args.isBad).to.eql('false');
   });
 }
 
