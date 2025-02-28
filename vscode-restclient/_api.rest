@@ -23,4 +23,10 @@ content-type: application/json
 DELETE {{hostname}}/users/{{createUser.response.body.$.user.id}}
 content-type: application/json
 
+###
+PATCH {{hostname}}/users/{{createUser.response.body.$.user.id}}
+content-type: application/json
 
+{
+	"first_name": "John patched"
+}

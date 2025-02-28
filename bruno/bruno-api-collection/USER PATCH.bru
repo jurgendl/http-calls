@@ -1,0 +1,17 @@
+meta {
+  name: USER PATCH
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{hostname}}/users/{{userid}}
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "first_name": "John patched"
+  }
+}
