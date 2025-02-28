@@ -21,3 +21,7 @@ PUT {{hostname}}/put
 Content-Type: application/x-www-form-urlencoded
 
 name=john+deer&permissions=2000&permissions=3000&permissions=4000
+
+###
+GET {{hostname}}/hidden-basic-auth/u/p
+Authorization: Basic dTpw

@@ -1,0 +1,27 @@
+meta {
+  name: AUTH
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{hostname}}/hidden-basic-auth/u/p
+  body: none
+  auth: basic
+}
+
+auth:basic {
+  username: u
+  password: p
+}
+
+tests {
+  test("Status code is 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+}
+
+docs {
+  Simple GET request with URL Parameters
+}
