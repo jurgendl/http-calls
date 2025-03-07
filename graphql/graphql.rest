@@ -1,1 +1,33 @@
-### TODO
+@hostname=https://api.github.com/graphql
+
+### without "X-REQUEST-TYPE: GraphQL" => oneline body
+POST {{hostname}}
+accept: application/vnd.github+json
+authorization: Bearer {{$dotenv GIT_ACCESS_TOKEN}}
+content-type: application/json
+x-github-api-version: 2022-11-28
+
+{"query":"{viewer{repositories(last:10){nodes{name description}}}}"}"
+
+### with "X-REQUEST-TYPE: GraphQL" => seperate formatted and unescaped query and parameters
+POST {{hostname}}
+accept: application/vnd.github+json
+authorization: Bearer {{$dotenv GIT_ACCESS_TOKEN}}
+content-type: application/json
+x-github-api-version: 2022-11-28
+X-REQUEST-TYPE: GraphQL
+
+query codeOfConduct($key: String!) {
+  codeOfConduct(key: $key) {
+    body
+    id
+    key
+    name
+    resourcePath
+    url
+  }
+}
+
+{
+  "key": "contributor_covenant"
+}
