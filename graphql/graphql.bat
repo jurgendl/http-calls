@@ -18,13 +18,24 @@
 :: echo curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer %GIT_ACCESS_TOKEN%" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/graphql --data "{\"query\":\" %graphql% \"}"
 
 
-set script_name=%1
-set graphql_file=%script_name%.graphql
-set graphql_parameters_file=%script_name%.json
+::echo %~1
+::echo %~2
+set graphql_file=%~1
+::echo %graphql_file%
+if not "%~2"=="" (
+    set graphql_parameters_file=%~2
+	if not exist "%graphql_parameters_file%" (
+		echo Error: GraphQL file "%graphql_parameters_file%" not found.
+		exit /b 1
+	)
+) else (
+	set graphql_parameters_file=tmp.tmp
+)
+::echo %graphql_parameters_file%
 
 :: Check if the GraphQL file exists
 if not exist "%graphql_file%" (
-    ::echo Error: GraphQL file "%graphql_file%" not found.
+    echo Error: GraphQL file "%graphql_file%" not found.
     exit /b 1
 )
 

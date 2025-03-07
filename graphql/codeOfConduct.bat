@@ -1,2 +1,2 @@
 @echo off
-call graphql.bat %~n0
+call graphql.bat %~n0.graphql %~n0.json
