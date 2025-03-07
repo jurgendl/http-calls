@@ -1,0 +1,15 @@
+meta {
+  name: last_10_repositories_viewed
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: https://api.github.com/graphql
+  body: graphql
+  auth: inherit
+}
+
+body:graphql {
+  {viewer{repositories(last:10){nodes{name description}}}}
+}

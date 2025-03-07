@@ -1,2 +1,5 @@
 /_api/node_modules
 /_api/package-lock.json
+
+.env
+*.tmp

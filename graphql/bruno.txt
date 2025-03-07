@@ -1,0 +1,1 @@
+https://docs.usebruno.com/secrets-management/dotenv-file
