@@ -11,5 +11,15 @@ post {
 }
 
 body:graphql {
-  {viewer{repositories(last:10){nodes{name description}}}}
+  {
+    viewer {
+      repositories(last: 10) {
+        nodes {
+          name
+          description
+        }
+      }
+    }
+  }
+  
 }
