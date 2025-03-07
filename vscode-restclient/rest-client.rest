@@ -50,3 +50,8 @@ GET https://httpbin.org/gzip
 GET https://github.com/httpie/cli/archive/master.tar.gz
 
 > ./master.tar.gz
+
+### WIP? https://github.com/Huachao/vscode-restclient/issues/711
+GET https://httpbin.org/stream-bytes/1048576
+
+> ./1048576.bin
