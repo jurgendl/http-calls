@@ -1,7 +1,14 @@
-@hostname=https://api.github.com/graphql
+@hostname=https://api.github.com
+
+###
+GET {{hostname}}/graphql
+accept: application/vnd.github+json
+authorization: Bearer {{$dotenv GIT_ACCESS_TOKEN}}
+content-type: application/json
+x-github-api-version: 2022-11-28
 
 ### without "X-REQUEST-TYPE: GraphQL" => oneline body
-POST {{hostname}}
+POST {{hostname}}/graphql
 accept: application/vnd.github+json
 authorization: Bearer {{$dotenv GIT_ACCESS_TOKEN}}
 content-type: application/json
@@ -10,7 +17,7 @@ x-github-api-version: 2022-11-28
 {"query":"{viewer{repositories(last:10){nodes{name description}}}}"}"
 
 ### with "X-REQUEST-TYPE: GraphQL" => seperate formatted and unescaped query and parameters
-POST {{hostname}}
+POST {{hostname}}/graphql
 accept: application/vnd.github+json
 authorization: Bearer {{$dotenv GIT_ACCESS_TOKEN}}
 content-type: application/json
@@ -30,4 +37,48 @@ query codeOfConduct($key: String!) {
 
 {
   "key": "contributor_covenant"
+}
+
+### type: ISSUE, ISSUE_ADVANCED, REPOSITORY, USER, DISCUSSION
+POST {{hostname}}/graphql
+accept: application/vnd.github+json
+authorization: Bearer {{$dotenv GIT_ACCESS_TOKEN}}
+content-type: application/json
+x-github-api-version: 2022-11-28
+X-REQUEST-TYPE: GraphQL
+
+query search ($after: String, $before: String, $first: Int, $last: Int, $query: String!, $type: SearchType!) {
+    search (after: $after, before: $before, first: $first, last: $last, query: $query, type: $type) {
+        codeCount
+        edges {
+            cursor
+            node
+            textMatches {
+                fragment
+                highlights {
+                    beginIndice
+                    endIndice
+                    text
+                }
+                property
+            }
+        }
+        issueCount
+        nodes
+        pageInfo {
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+        repositoryCount
+        userCount
+        wikiCount
+    }
+}
+
+{
+  "first": 0,
+  "query": "java",
+  "type": "REPOSITORY"
 }
