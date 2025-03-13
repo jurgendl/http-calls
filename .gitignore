@@ -3,3 +3,7 @@
 
 .env
 *.tmp
+*.bin
+*.gz
+/httpie/gzip.json
+/xh/gzip.json

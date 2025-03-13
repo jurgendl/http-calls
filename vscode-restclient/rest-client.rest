@@ -1,4 +1,5 @@
 @hostname=https://httpbin.org
+# @hostname=https://httpbingo.org
 
 ###
 GET {{hostname}}/get
