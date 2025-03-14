@@ -4,6 +4,4 @@
 @cls
 yq ".foods" yaml.yml
 yq ".education" yaml.yml
-yq -i ".employed = False" yaml.yml
-git diff yaml.yml
 @pause
