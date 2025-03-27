@@ -1,0 +1,22 @@
+meta {
+  name: repo_branches_no_graphql
+  type: graphql
+  seq: 4
+}
+
+get {
+  url: https://api.github.com/repos/{{owner}}/{{repo}}/branches?protected=false&per_page=30&page=1
+  body: none
+  auth: inherit
+}
+
+params:query {
+  protected: false
+  per_page: 30
+  page: 1
+}
+
+vars:pre-request {
+  owner: jurgendl
+  repo: http-calls
+}
