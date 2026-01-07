@@ -1,0 +1,51 @@
+windows settings
+	App execution aliases
+		disable python.exe
+		disable python3.exe
+
+https://github.com/pyenv-win/pyenv-win
+
+Powershell
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+
+pyenv install -l
+
+pyenv install 2.7.18
+
+pyenv install 3.13.3
+pyenv global 3.13.3
+
+python -c "import sys; print(sys.executable)"
+C:\Users\...\.pyenv\pyenv-win\versions\3.13.5\python.exe
+
+path: (remove? - old directories)
+C:\Users\...\AppData\Roaming\Python\Python313\Scripts\
+C:\Users\...\AppData\Local\Programs\Python\Python313\
+
+python --version
+Python 3.13.5
+
+pip --version
+pip 25.1.1 from C:\Users\...\.pyenv\pyenv-win\versions\3.13.5\Lib\site-packages\pip (python 3.13)
+
+where python
+C:\Users\...\.pyenv\pyenv-win\shims\python
+C:\Users\...\.pyenv\pyenv-win\shims\python.bat
+C:\Users\...\AppData\Local\Microsoft\WindowsApps\python.exe <- delete
+
+where pip
+C:\Users\...\.pyenv\pyenv-win\shims\pip
+C:\Users\...\.pyenv\pyenv-win\shims\pip.bat
+
+pip install pyinstaller
+
+pyinstaller --version
+6.15.0
+
+where pyinstaller
+C:\Users\...\.pyenv\pyenv-win\shims\pyinstaller
+C:\Users\...\.pyenv\pyenv-win\shims\pyinstaller.bat
+
+
+python -m pip install --upgrade pip
+
