@@ -1,0 +1,8 @@
+::Username	$u
+::Hostname	$h
+::Current path	$p
+::$ or >	$g
+::New line	$n
+::Time	$t
+::Date	$d
+PROMPT ~$g 
